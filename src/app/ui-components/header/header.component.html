@@ -1,0 +1,12 @@
+<div class="navbar-wrapper"fxLayout="column">
+      <div class="nav-bar flex-container" fxLayout="row">
+        <div fxFlex="70%" class="header-text">
+            <h2>ONLINE MARKET</h2>
+        </div>
+        <div fxFlex="30%" fxLayout="row" fxLayoutGap="30px">
+            <div  class="manu-item" *ngFor="let item of manuItems">
+                <a>{{item.value}}</a>
+            </div>
+        </div>
+      </div>
+  </div>

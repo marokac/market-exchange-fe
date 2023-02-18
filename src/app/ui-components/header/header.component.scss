@@ -1,0 +1,38 @@
+
+.navbar-wrapper {
+    position: sticky;
+    z-index: 5;
+    width: 100%;
+    border-bottom: 1px solid #e4e4e4;
+    background-color: #fff;
+}
+.nav-bar{
+    width: 100%;
+}
+
+.flex-container{
+    padding-right: 15%;
+    padding-left: 15%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 10px;
+    align-items: end;
+}
+.header-text{
+    font-family: "kanit-bold", Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    font-size: 30px;
+    color: #2196f3;
+    &:hover{
+        cursor: pointer;  
+    }
+}
+
+.manu-item{
+    padding: 12px;
+    transition: border .2s ease;
+    &:hover{
+        border-bottom: 3px solid #2196f3;
+        cursor: pointer;
+    }
+}

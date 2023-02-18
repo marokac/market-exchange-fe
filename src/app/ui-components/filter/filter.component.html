@@ -1,0 +1,30 @@
+<div class="filter" fxLayout="column">
+  <div class="filter-header">
+    <h5>Filter</h5>
+  </div>
+  <div [formGroup]="form" class="filter-body" fxLayout="column">
+    <ng-container
+      [formGroupName]="item.title"
+      *ngFor="let item of searchManu; let i = index"
+    >
+      <div class="filter-item" (click)="expandItem(i)">
+        {{ item.title }}
+      </div>
+      <div class="filter-sub-menu" fxLayout="column" *ngIf="item.expanded">
+        <div class="filter-sub-menu-item" *ngFor="let subItem of item?.subMenu">
+          <label class="checkbox-group">
+            {{ subItem.title }}
+            <input
+              type="checkbox"
+              checked="form.get(item.title).controls[subItem.title].value"
+              value="subItem.title"
+              [formControlName]="subItem.title"
+              (click)="onCheckBoxClick($event, i) ; setFormValue(item.title,subItem.title)"
+            />
+            <span class="checkmark"></span>
+          </label>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
