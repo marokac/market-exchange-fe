@@ -1,0 +1,9 @@
+<app-pannel headerText="Create your ads"(OnPannelClose)="closePannel($event)">
+    <!-- <progress-bar [progress]="progress" [color]="'#51c2f9'">
+    </progress-bar> -->
+    <!-- <mat-progress-bar mode="determinate" value="40"></mat-progress-bar> -->
+
+    <app-ad-details (onCurrentPageChange)="onCurrentPageChange($event)" *ngIf="currentPageIndex === 0"></app-ad-details>
+    <app-address (onCurrentPageChange)="onCurrentPageChange($event)" *ngIf="currentPageIndex === 1"></app-address>
+    <app-comfirm (onCurrentPageChange)="onCurrentPageChange($event)" *ngIf="currentPageIndex === 2"></app-comfirm>
+</app-pannel>

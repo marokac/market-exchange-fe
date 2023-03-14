@@ -1,0 +1,38 @@
+<div fxLayout="row" class="item-tile">
+<div fxFlex="100%">
+    <img height="212" src="https://images.prop24.com/286167618/Crop600x400">
+</div>
+<div fxFlex="100%" fxLayout="column"  class="tile-info">
+    <h1 class="item_price">R{{item.price}}.00</h1>
+    <p class="item_subTitle-2">Location: {{item.subub}}</p>
+    <p class="item_subTitle">{{item.title}}</p>
+    <p class="item_subTitle-2">
+        {{item.description}}
+    </p>
+
+    <div class="tile-footer" fxLayoutGap="10px">
+       <span>Listed on {{item.createdAt}}</span>
+       <span>Views (10)</span>
+    </div>
+</div>
+</div>
+
+<!-- 
+title: String,
+subtitle: String,
+description: String,
+price: String,
+category: String,
+subCategory: String,
+imgUrls: [String],
+userId: String,
+streetName: String,
+streetNumber: String,
+subub: String,
+city: String,
+postalCode: String,
+provience: String,
+lat: String,
+log: String, -->
+
+

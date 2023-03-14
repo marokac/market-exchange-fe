@@ -1,0 +1,30 @@
+<div fxLayout="row" class="flex-container" fxLayoutGap="30px">
+  <div fxFlex="25%">
+    <app-filter [searchManu]="searchManu" (inputChange)="inputChange($event)"></app-filter>
+  </div>
+  <div fxFlex="75%">
+    <app-search (OnSearchChanges)="onSearchInput($event)"></app-search>
+    <div class="" fxLayout="column">
+      <div fxLayout="row" fxFlex="100%" class="list-header">
+        <div fxFlex="50%">
+           <mat-paginator [length]="10"   (page)="onPaginateChange($event)" [pageSize]="2" aria-label="Select page">
+          </mat-paginator>
+        </div>
+        <div fxFlex="50%" class="sort-by" [class.menu-open]="manuOpen">
+          <span class="u-bolder">SortBy: &nbsp;</span>
+          <span> {{selectedSortBy}}</span>
+          <img (click)="openSortByMenu()" width="24px" src="../../../assets/images/chevron_right.svg">
+          <div class="sort-by-menu" *ngIf="manuOpen" fxLayout="column">
+            <ng-container *ngFor="let item of sortByMenu">
+              <div class="menu-item" [class.menu-item-selected]="item.name === selectedSortBy"
+                (click)="selectSortBy(item.name)">{{item.name}}</div>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ng-container *ngFor="let item of Items">
+      <app-item-tile [item]="item" (click)="viewItem(item)"></app-item-tile>
+    </ng-container>
+  </div>
+</div>

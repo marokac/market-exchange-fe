@@ -1,0 +1,18 @@
+
+<div class="input-wrapper" fxLayout="row">
+    <div class="filter-options" fxFlex="15%">{{selected.value}} 
+        <img class="icon"  [class.manu-open]="manuOpen"(click)="togglemanu()" src="../../../assets/images/chevron_right-white.svg">
+        <div class="filter-options-menu" *ngIf="manuOpen">
+            <ng-container *ngFor="let item of filterOptions">
+                <span class="menu-item" [class.menu-item-selected]="item.value === selected.value"
+                (click)="selectSortBy(item)" >{{item.value}}</span>
+            </ng-container>
+        </div>
+    </div>
+    <input fxFlex="75%"  placeholder="{{selected.placeHolder}}" [formControl]="searchInput" (input)="onSearchInput()"> 
+    <div class="icon" fxFlex="10%">
+        <img width="25px" *ngIf="searchEmpty" src="../../../assets/images/search.svg" alt="">
+        <img width="25px" (click)="clearForm()" *ngIf="!searchEmpty"src="../../../assets/images/close.svg" alt="">
+    </div>
+</div>
+

@@ -1,0 +1,12 @@
+<div fxFlex="100" class="panel-container" [class.secondary]="data?.type==='secondary'" fxLayout="column">
+    <img [src]="data?.iconUrl">
+    <h1 class="panel-container-title">
+        {{data?.title}}
+    </h1>
+    <p class="panel-container-text">
+        {{data?.text}}
+    </p>
+    <div class="actions">
+        <app-button  [type]="data?.type" (click)="onButtonAction()" [data]="{label: 'DONE',iconUrl:''}"></app-button>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+.register-form{
+  padding: 20px;
+  border-top: 1px solid #3cc89e;
+}
+
+.header{
+    font-family: "kanit-medium", Arial, Helvetica, sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+}
+
+.actions{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-text{
+    font-family: "kanit-light", Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    font-size: 14px;
+    margin: 5px;
+
+    span{
+        color: #51c2f9;
+        cursor: pointer;
+    }
+}

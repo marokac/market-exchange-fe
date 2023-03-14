@@ -1,0 +1,66 @@
+
+
+<form [formGroup]="form" class="register-form" fxLayout="column" fxLayoutGap="15px">
+    <div fxLayout="column" fxFlex="100">
+        <h1 class="header">Join our team and start selling online</h1>
+    </div>
+    <app-input fxLayout="column" fxFlex="100" *ngIf="!pageIndexNumber"(inputChange)="onInputChange($event)" [data]="{
+        label: 'First Name',
+        controlName: 'firstName',
+        parentFormGroup: form,
+        type:'text',
+        errorMessage : ''
+    }"></app-input>
+
+    <app-input fxLayout="column" fxFlex="100" *ngIf="!pageIndexNumber" (inputChange)="onInputChange($event)" [data]="{
+        label: 'Last Name',
+        controlName: 'lastName',
+        parentFormGroup: form,
+        type:'text',
+        errorMessage : ''
+    }"></app-input>
+
+    <app-input fxLayout="column" fxFlex="100" *ngIf="!pageIndexNumber" (inputChange)="onInputChange($event)" [data]="{
+        label: 'Cellphone Number',
+        controlName: 'cellphone',
+        parentFormGroup: form,
+        type:'text',
+        errorMessage : ''
+    }"></app-input>
+
+    <app-input fxLayout="column" fxFlex="100" *ngIf="pageIndexNumber" (inputChange)="onInputChange($event)" [data]="{
+        label: 'Email Address',
+        controlName: 'email',
+        parentFormGroup: form,
+        type:'text',
+        errorMessage : ''
+    }"></app-input>
+
+    <app-input fxLayout="column" fxFlex="100" *ngIf="pageIndexNumber" (inputChange)="onInputChange($event)" [data]="{
+        label: 'Password',
+        controlName: 'password',
+        parentFormGroup: form,
+        type:'password',
+        errorMessage : ''
+    }"></app-input>
+    <app-input fxLayout="column" fxFlex="100" *ngIf="pageIndexNumber" (inputChange)="onInputChange($event)" [data]="{
+        label: 'Comfirm Password',
+        controlName: 'cpassword',
+        parentFormGroup: form,
+        type:'password',
+        errorMessage : ''
+    }"></app-input>
+
+    <div class="actions" fxLayout="column" fxFlex="100">
+        <app-button (click)="nextIndex()" [type]="'secondary'" [data]="{label: pageIndexNumber? 'JOIN' : 'NEXT',iconUrl:''}"></app-button>
+        <label class="login-text">Already have an account?
+            <span>go to login</span>
+        </label>
+    </div>
+</form>
+
+
+
+
+
+

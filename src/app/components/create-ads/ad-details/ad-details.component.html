@@ -1,0 +1,102 @@
+<div class="ad-form-container" fxLayout="row" fxFlex="100">
+    <form [formGroup]="form" class="ads-form" fxLayout="column" fxFlex="100" fxLayoutGap="15px">
+        <div fxLayout="column" fxFlex="50">
+            <div class="header-rwapper">
+                <img src="../../../../assets/images/edit_note.svg">
+                <h1 class="header sp-left">Get Started</h1>
+            </div>
+            
+            <span class="stepper-text">STEP 1 OF 2</span>
+            <progress-bar progress="50" [color]="'#51c2f9'">
+            </progress-bar>
+        </div>
+        <div class="flex-container" fxLayoutGap="15px" fxLayout="row" fxFlex="100">
+            <h4 fxFlex="50">Ad details</h4>
+        </div>
+        <div class="flex-container" fxLayoutGap="15px" fxLayout="row" fxFlex="100">
+            <app-input fxLayout="column" fxFlex="50" class="form-input" (inputChange)="onInputChange($event)" [data]="{
+                label: 'Item Title',
+                controlName: 'title',
+                parentFormGroup: form,
+                type:'text',
+                errorMessage : formError['title'],
+                placeholder: 'SMART TV',
+                size: 'large'
+            }"></app-input>
+
+            <app-input fxLayout="column" fxFlex="50" class="form-input" (inputChange)="onInputChange($event)" [data]="{
+                label: 'Item Subtitle',
+                controlName: 'subtitle',
+                parentFormGroup: form,
+                type:'text',
+                errorMessage : formError['subtitle'],
+                placeholder: 'LG 32 SMART TV',
+                size: 'large'
+            }"></app-input>
+        </div>
+
+        <div class="flex-container" fxLayoutGap="15px" fxLayout="row" fxFlex="100">
+            <app-text-area fxLayout="column" fxFlex="50" class="form-input" [data]="{
+                label: 'Discription',
+                controlName: 'discription',
+                parentFormGroup: form,
+                errorMessage : formError['discription'],
+                placeholder: 'Discripe your item'
+            }">
+            </app-text-area>
+            <app-input fxLayout="column" fxFlex="50" class="form-input" (inputChange)="onInputChange($event)" [data]="{
+                label: 'Item Price',
+                controlName: 'price',
+                parentFormGroup: form,
+                type:'number',
+                errorMessage : formError['price'],
+                placeholder: 'R1999.00',
+                size: 'large'
+            }"></app-input>
+        </div>
+
+        <div class="flex-container" fxLayoutGap="15px" fxLayout="row" fxFlex="100">
+
+            <app-select fxLayout="column" [options]="categoryOptions" fxFlex="50" class="form-input" [data]="{
+                label: 'Subcategory',
+                controlName: 'subcategory',
+                parentFormGroup: form,
+                errorMessage : formError['subcategory'],
+                size: 'large'
+            }"></app-select>
+
+            
+
+            <app-select fxLayout="column" [options]="categoryOptions" fxFlex="50" class="form-input" [data]="{
+                label: 'Category',
+                controlName: 'category',
+                parentFormGroup: form,
+                errorMessage : formError['category'],
+                size: 'large'
+            }"></app-select>
+
+        </div>
+
+        <div class="flex-container" fxLayoutGap="15px" fxLayout="row" fxFlex="100">
+            <app-file-upload fxLayout="column" fxFlex="50" class="form-input" (inputChange)="onFileInputChange($event)" [data]="{
+                label: 'Upload Pictures',
+                controlName: 'files',
+                parentFormGroup: form,
+                errorMessage : formError['files']
+            }"></app-file-upload>
+        </div>
+
+        <div class="file-container" fxLayoutGap="15px" fxLayout="row" *ngFor="let file of fileList" fxFlex="100">
+            <span fxLayout="column" fxFlex="100" class="file-list">
+              {{file.fileName}}
+            </span>
+            <img class="file-container-close" width="16px" src="../../../../assets/images/close-black.svg">
+        </div>
+
+
+        <div class="actions" fxLayoutGap="15px" fxLayout="row" fxFlex="100">
+            <app-button (click)="nextBtnClick()" [type]="'outline'" [data]="{label: 'BACK',iconUrl:''}"></app-button>
+            <app-button (click)="nextBtnClick()" [type]="'primary'" [data]="{label: 'NEXT',iconUrl:''}"></app-button>
+        </div>
+    </form>
+</div>

@@ -2,47 +2,71 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 
 @font-face {
-    font-family: "kanit-black";
-    src: local("Oxygen"), url(./assets/fonts/Kanit-Black.ttf) format("truetype");
+  font-family: "kanit-black";
+  src: local("Oxygen"), url(./assets/fonts/Kanit-Black.ttf) format("truetype");
 }
-@font-face {
-    font-family: "kanit-bold";
-    src: local("kanit-black"), url(./assets/fonts/Kanit-Bold.ttf) format("truetype");
-}
-@font-face {
-    font-family: "kanit-extra-bold";
-    src: local("Oxygen"), url(./assets/fonts/Kanit-ExtraBold.ttf) format("truetype");
-}
-@font-face {
-    font-family: "kanit-extra-light";
-    src: local("Oxygen"), url(./assets/fonts/Kanit-ExtraLight.ttf) format("truetype");
-}
-@font-face {
-    font-family: "kanit-light";
-    src: local("Oxygen"), url(./assets/fonts/Kanit-Light.ttf) format("truetype");
-}
-@font-face {
-    font-family: "kanit-medium";
-    src: local("Oxygen"), url(./assets/fonts/Kanit-Medium.ttf) format("truetype");
-}
-  :host {
-    font-family: "kanit-black", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 14px;
-    color: #333;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin: 8px 0;
-  }
+@font-face {
+  font-family: "kanit-bold";
+  src: local("kanit-black"), url(./assets/fonts/Kanit-Bold.ttf) format("truetype");
+}
 
-  p {
-    margin: 0;
-  }
+@font-face {
+  font-family: "kanit-extra-bold";
+  src: local("Oxygen"), url(./assets/fonts/Kanit-ExtraBold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "kanit-extra-light";
+  src: local("Oxygen"), url(./assets/fonts/Kanit-ExtraLight.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "kanit-light";
+  src: local("Oxygen"), url(./assets/fonts/Kanit-Light.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "kanit-medium";
+  src: local("Oxygen"), url(./assets/fonts/Kanit-Medium.ttf) format("truetype");
+}
+
+:host {
+  font-family: "kanit-black", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 14px;
+  color: #333;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 8px 0;
+}
+
+p {
+  margin: 0;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+img {
+  vertical-align: middle;
+}
+body{
+  color: #515b6d;
+background-color: #f6f6f6!important;
+}

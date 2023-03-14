@@ -1,0 +1,10 @@
+
+<div fxFlex="100" fxLayout="row wrap" [formGroup]="data.parentFormGroup">
+    <label class="select-input-label" >{{data.label}}</label>
+    <select fxFlex="100" [class.select-input-valid]="inputValue && !data.errorMessage"[class.select-input-input-err]="data.errorMessage" [class.select-input-large]="data.size==='large'" formControlName = "{{data.controlName}}" (change)="onInputChange($event)" class="select-input">
+        <ng-container *ngFor="let option of options">
+                <option value="{{option.name}}">{{option.value}}</option>
+        </ng-container>
+    </select>
+    <span fxFlex="100"class="select-input-err" *ngIf="data.errorMessage">{{data.errorMessage}}</span>
+</div>

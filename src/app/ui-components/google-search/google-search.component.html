@@ -1,0 +1,13 @@
+<div fxFlex="100" fxLayout="row wrap">
+    <label fxFlex="100" class="input-container-label">{{data.label}}</label>
+    <div class="input-container" [class.input-container-err]="data.errorMessage" [class.input-container-large]="data.size==='large'" fxFlex="100">
+        <input fxFlex="90" #addresstext  placeholder="{{data.placeholder}}" class="c-input" [(ngModel)]="autocompleteInput" type="text"/>
+        <div fxFlex="10">
+            <img class="input-icon" *ngIf="!autocompleteInput" width="18px" src="../../../assets/images/search-black.svg">
+            <img class="input-icon input-icon-close" *ngIf="autocompleteInput" width="18px" (click)="clearField()" src="../../../assets/images/close-black.svg">
+        </div>
+      
+    </div>
+    
+    <span fxFlex="100"class="input-container-err" *ngIf="data.errorMessage">{{data.errorMessage}}</span>
+</div>

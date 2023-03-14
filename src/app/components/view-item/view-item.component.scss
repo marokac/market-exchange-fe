@@ -1,0 +1,86 @@
+.flex-container{
+    padding-right: 15%;
+    padding-left: 15%;
+    margin-right: auto;
+    margin-left: auto;
+}
+.item-details{
+    padding: 10px;
+    margin: 10px;
+    margin-left: 0;
+    margin-right: 0;
+   // box-shadow: 0 2px 4px rgba(0,0,0,.22);
+    display: flex;
+    border: 1px solid #d8dce3;
+    background-color: #fff;  
+    position:relative;
+
+    &-icons{
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        right: 10px;
+        top: 5px;
+        img{
+            width: 24px;
+            &:hover{
+                width: 30px;
+            }
+            cursor: pointer;
+        }
+    }
+}
+.user-details{
+    margin: 10px;
+    margin-top: 0;
+    padding: 10px;
+   // box-shadow: 0 2px 4px rgba(0,0,0,.22);
+    display: flex;
+    align-items: center;
+    border: 1px solid #d8dce3;
+    background-color: #fff;
+}
+
+.user-label{
+    font-family: "kanit-light", Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    line-height: 18px;
+    margin: 5px 10px;
+}
+
+.user-name{
+    margin: 10px;
+    font-size: 16px;
+    font-family: "kanit-light", Arial, Helvetica, sans-serif; 
+}
+
+.item_price {
+    font-family: "kanit-medium", Arial, Helvetica, sans-serif;
+    color: #51c2f9;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 18px;
+    margin: 5px 10px;
+}
+.item-name{
+    margin: 5px;
+    margin-left: 10px;
+    font-size: 16px;
+    font-family: "kanit-medium", Arial, Helvetica, sans-serif; 
+    font-weight: 800;
+}
+
+.item-date{
+    font-size: 12px;
+    font-family: "kanit-light", Arial, Helvetica, sans-serif; 
+    font-weight: 100; 
+    display: block;
+    margin: 10px;
+}
+.back-btn{
+display: flex;
+justify-content: flex-end;
+margin-bottom: 20px;
+width: 100%;
+margin: 10px;
+}

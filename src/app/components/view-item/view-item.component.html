@@ -1,0 +1,38 @@
+
+<div fxLayout="row" class="flex-container" fxLayoutGap="30px">
+    <div fxFlex="70%"></div>
+    <div class="back-btn" fxFlex="30%">
+        <app-button (click)="backToResult()" [type]="'primary'" [data]="{label:'Back to result',iconUrl:'../../../assets/images/arrow-back.svg'}"></app-button>
+    </div>
+   
+</div>
+<div fxLayout="row" class="flex-container" fxLayoutGap="30px">
+    <div fxFlex="70%">
+        <app-image-slider
+        [images] ="images"
+        ></app-image-slider>
+    </div>
+    <div fxFlex="30%" fxLayout="column" class="user-details">
+       <h1 class="user-label">Contact Agent</h1>
+       <h6 class="user-name">Corrie Muller</h6>
+       <p class="user-name">082 794 3118</p>
+       <p class="user-name">082 794 3118</p>
+       <app-button [data]="{label:'WhatsApp Agent',iconUrl:'../../../assets/images/whatsapp.svg'}"></app-button>
+    </div>
+</div>
+<div fxLayout="row" class="flex-container" fxLayoutGap="30px">
+  <div fxFlex="66%" fxLayout="column" class="item-details">
+      <h1 class="item_price">{{item.price}}</h1>
+      <h6 class="user-name">Location | {{item.subub}}</h6>
+      <p class="item-name">{{item.title}}</p>
+      <p class="user-name">
+        {{item.description}}
+      </p>
+      <span class="item-date">Uploaded on {{item.createdAt}} by {{item.email}}</span>
+      <div class="item-details-icons" fxLayout="row" fxLayoutGap="20px">
+         <img src="../../../assets/images/share.svg">
+         <img src="../../../assets/images/favorite.svg">
+      </div>
+  </div>
+  <div  fxFlex="30%" fxLayout="column"></div>
+</div>

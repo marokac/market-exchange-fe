@@ -1,0 +1,10 @@
+<mat-dialog-content style="width: 358px; background-color: white; padding: 20px;">
+    <mat-tab-group [class.register]="currentTap" (selectedTabChange)="tabChanged($event)" mat-align-tabs="start" [(selectedIndex)]="currentTap">
+        <mat-tab  md-no-pagination label="Login">
+            <app-login></app-login>
+        </mat-tab>
+        <mat-tab md-no-pagination  label="Join us">
+            <app-register></app-register>
+        </mat-tab>
+    </mat-tab-group>
+</mat-dialog-content>

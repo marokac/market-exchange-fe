@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,11 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   
-  manuItems = [
-    {name: 'sell', value:'SELL'},
-    {name: 'login', value:'LOGIN'},
-    {name: 'join', value:'JOIN'},
-  ]
+  @Input() manuItems:{name: string, value: string, iconUrl: string}[] = [];
+
+  @Input() profile:any = null;
+
+  @Output() onMenuClickChange: EventEmitter<any> = new EventEmitter();
+
+  profileMenuOpen = false;
+ 
   constructor() { }
 
   ngOnInit(): void {
@@ -19,6 +22,16 @@ export class HeaderComponent implements OnInit {
 
   getNumberOfItems(): Number{
     return (1 / this.manuItems.length) * 100;
+  }
+
+  onClickChange(value: string): void {
+    this.onMenuClickChange.next(value);
+  }
+
+  openProfile(): void{
+    if(this.profile){
+      this.profileMenuOpen = !this.profileMenuOpen;
+    }
   }
 
 }

@@ -1,0 +1,34 @@
+<form [formGroup]="form" class="login-form" fxLayout="column" fxLayoutGap="15px">
+    <div fxLayout="column" fxFlex="100">
+        <h1 class="header">Log into your account</h1>
+        <span class="login-text"></span>
+        <app-button (click)="loginWithGoogle()" [type]="'google'"
+            [data]="{label:'Sign in with google?',iconUrl:'../../../assets/images/google.svg'}"></app-button>
+        <span class="login-text">Or</span>
+    </div>
+    <app-input fxLayout="column" fxFlex="100" (inputChange)="onInputChange($event)" [data]="{
+        label: 'Email Address',
+        controlName: 'email',
+        parentFormGroup: form,
+        type:'text',
+        errorMessage : formError['email']
+    }"></app-input>
+
+    <app-input fxLayout="column" fxFlex="100" (inputChange)="onInputChange($event)" [data]="{
+        label: 'Password',
+        controlName: 'password',
+        parentFormGroup: form,
+        type:'password',
+        errorMessage : formError['password']
+    }"></app-input>
+
+    <div class="actions" fxLayout="column" fxFlex="100">
+        <app-button [type]="'primary'" (click)="login()"[data]="{label:'LOGIN',iconUrl:''}"></app-button>
+        <label class="login-text">Don't have an account?
+            <span>Register</span>
+        </label>
+        <label class="login-text">Forgot password?
+            <span>link</span>
+        </label>
+    </div>
+</form>

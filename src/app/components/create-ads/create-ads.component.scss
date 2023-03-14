@@ -1,0 +1,10 @@
+::ng-deep .progress-inner {
+    height: 6px!important;
+    min-height: 6px!important;
+    color: rgb(81,194,249);
+}
+
+::ng-deep .progress-outer {
+    width: 100%!important;
+    margin: 0!important; 
+}

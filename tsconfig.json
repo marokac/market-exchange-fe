@@ -16,6 +16,7 @@
     "importHelpers": true,
     "target": "es2017",
     "module": "es2020",
+    "types": ["googlemaps"],
     "lib": [
       "es2018",
       "dom"
@@ -23,8 +24,9 @@
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
-    "strictInjectionParameters": true,
-    "strictInputAccessModifiers": true,
-    "strictTemplates": true
+    "strictInjectionParameters": false,
+    "strictInputAccessModifiers": false,
+    "strictTemplates": true,
+    "strictPropertyInitialization": false,
   }
 }

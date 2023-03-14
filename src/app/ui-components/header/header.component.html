@@ -1,12 +1,32 @@
 <div class="navbar-wrapper"fxLayout="column">
       <div class="nav-bar flex-container" fxLayout="row">
-        <div fxFlex="70%" class="header-text">
-            <h2>ONLINE MARKET</h2>
+        <div fxFlex="60%" class="header-text">
+           <img  width="150px" src="../../../assets/images/logo.jpeg">
         </div>
-        <div fxFlex="30%" fxLayout="row" fxLayoutGap="30px">
-            <div  class="manu-item" *ngFor="let item of manuItems">
-                <a>{{item.value}}</a>
+        <div fxFlex="40%" style="justify-content: right;"fxLayout="row" fxLayoutGap="30px">
+            <div  class="manu-item" 
+            [class.primary]="item.value === 'ADD'"
+            [class.secondary]="item.value === 'LOGIN'"
+            [class.tirtiary]="item.value === 'JOIN'"
+            *ngFor="let item of manuItems">
+                <img *ngIf="item?.iconUrl"[src]="item?.iconUrl">
+                <a (click)="onClickChange(item.value)">{{item.value}}</a>
+            </div>
+            <div class="logged-in-user-email" [class.profile-menu-open]="profileMenuOpen"(click)="openProfile()"*ngIf="profile">
+              <a>{{profile.email}}</a>
+              <img src="../../../assets/images/chevron_right.svg">
+              <div class="logged-in-user-email-drawer" *ngIf="profileMenuOpen">
+              <span class="item-text">logged in as</span>
+              <span class="item-text-lg" >{{profile.firstName}} {{profile.lastName}}</span>
+              <div class="logged-in-user-email-logout">
+                <span class="logged-in-user-email-logout-btn">
+                    logout?
+                    <img src="../../../assets/images/login.svg">
+                </span>
+              </div>
+            </div>
             </div>
         </div>
       </div>
   </div>
+

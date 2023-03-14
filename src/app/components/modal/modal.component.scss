@@ -1,0 +1,17 @@
+::ng-deep .mat-tab-label.mat-tab-label-active {
+    background-color: #51c2f9;
+    color: #fff;
+    font-family: "kanit-light", Arial, Helvetica, sans-serif;
+}
+
+::ng-deep.register .mat-tab-label.mat-tab-label-active {
+    background-color: #3cc89e!important;
+    color: #fff;
+    font-family: "kanit-light", Arial, Helvetica, sans-serif;
+}
+
+
+
+::ng-deep .mat-tab-header-pagination-controls-enabled .mat-tab-header-pagination {
+    display: none!important;
+}

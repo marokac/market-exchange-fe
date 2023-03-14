@@ -1,0 +1,25 @@
+.ad-form-container{
+    display: flex;
+    width: 100%;
+    background-color: white;
+    padding: 40px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: 25px;
+    display: inline;
+    box-shadow: 0 2px 4px rgba(0,0,0,.22);
+    border-radius: 3px;
+    min-height: 50vh;
+}
+
+.stepper-text{
+    font-family: "kanit-light", Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    font-size: 12px;  
+}
+
+.header{
+    font-family: "kanit-light", Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    font-size: 30px;
+}

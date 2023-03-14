@@ -1,0 +1,132 @@
+
+<div class="ad-form-container" fxLayout="row" fxFlex="100">
+    <form [formGroup]="form" class="ads-form" fxLayout="column" fxFlex="100" fxLayoutGap="15px">
+        <div fxLayout="column" fxFlex="50">
+            <div class="header-rwapper">
+                <img src="../../../../assets/images/location.svg">
+                <h1 class="header sp-left">Location</h1>
+            </div>
+           
+            <span class="stepper-text">STEP 2 OF 2</span>
+            <progress-bar progress="100" [color]="'#51c2f9'">
+            </progress-bar>
+        </div>
+        <div class="flex-container" fxLayoutGap="15px" fxLayout="row" fxFlex="100">
+            <h4 fxFlex="50">Choose location</h4>
+        </div>
+        <div class="flex-container" fxLayoutGap="15px" fxLayout="row" fxFlex="100">
+            <app-google-search fxLayout="column" fxFlex="50" class="form-input" (setAddress)="setGoogleAddress($event)" [data]="{
+                label: 'Search google map',
+                controlName: 'search',
+                parentFormGroup: form,
+                type:'text',
+                errorMessage : '',
+                placeholder: '14 princess ave',
+                size: 'large'
+            }"></app-google-search>
+        </div>
+
+        <div class="flex-container" fxLayoutGap="15px" fxLayout="row" fxFlex="100">
+
+            <app-input fxLayout="column" fxFlex="50" class="form-input" (inputChange)="onInputChange($event)" [data]="{
+                label: 'Street Name',
+                controlName: 'streetName',
+                parentFormGroup: form,
+                type:'text',
+                errorMessage : '',
+                placeholder: 'princes',
+                size: 'large',
+                isDisabled: true
+            }"></app-input>
+
+            <app-input fxLayout="column" fxFlex="50" class="form-input" (inputChange)="onInputChange($event)" [data]="{
+                label: 'Street Number',
+                controlName: 'streetNumber',
+                parentFormGroup: form,
+                type:'number',
+                errorMessage : '',
+                placeholder: '14',
+                size: 'large',
+                isDisabled: true
+            }"></app-input>
+        </div>
+
+        <div class="flex-container" fxLayoutGap="15px" fxLayout="row" fxFlex="100">
+
+            <app-input fxLayout="column" fxFlex="50" class="form-input" (inputChange)="onInputChange($event)" [data]="{
+                label: 'Subub',
+                controlName: 'subub',
+                parentFormGroup: form,
+                type:'text',
+                errorMessage : '',
+                placeholder: 'Windsor west',
+                size: 'large',
+                isDisabled: true
+            }"></app-input>
+
+            <app-input fxLayout="column" fxFlex="50" class="form-input" (inputChange)="onInputChange($event)" [data]="{
+                label: 'City',
+                controlName: 'city',
+                parentFormGroup: form,
+                type:'text',
+                errorMessage : '',
+                placeholder: 'Randburg',
+                size: 'large',
+                isDisabled: true
+            }"></app-input>
+        </div>
+        <div class="flex-container" fxLayoutGap="15px" fxLayout="row" fxFlex="100">
+            <app-input fxLayout="column" fxFlex="50" class="form-input" (inputChange)="onInputChange($event)" [data]="{
+                label: 'Postal Code',
+                controlName: 'postalCode',
+                parentFormGroup: form,
+                type:'text',
+                errorMessage : '',
+                placeholder: '1064',
+                size: 'large',
+                isDisabled: true
+            }"></app-input>
+            <app-input fxLayout="column" fxFlex="50" class="form-input" (inputChange)="onInputChange($event)" [data]="{
+                label: 'Provience',
+                controlName: 'provience',
+                parentFormGroup: form,
+                type:'text',
+                errorMessage : '',
+                placeholder: 'Gauteng',
+                size: 'large',
+                isDisabled: true
+            }"></app-input>
+        </div>
+        <div class="flex-container" fxLayoutGap="15px" fxLayout="row" fxFlex="100">
+            <h4 fxFlex="50">Contact details</h4>
+        </div>
+        <div class="flex-container" fxLayoutGap="15px" fxLayout="row" fxFlex="100">
+            <app-input fxLayout="column" fxFlex="50" class="form-input" (inputChange)="onInputChange($event)" [data]="{
+                label: 'Cellphone Number',
+                controlName: 'cellphone',
+                parentFormGroup: form,
+                type:'text',
+                errorMessage : '',
+                placeholder: '082 794 3118',
+                size: 'large'
+            }"></app-input>
+            <app-input fxLayout="column" fxFlex="50" class="form-input" (inputChange)="onInputChange($event)" [data]="{
+                label: 'Email',
+                controlName: 'email',
+                parentFormGroup: form,
+                type:'text',
+                errorMessage : '',
+                placeholder: 'jj@gmail.com',
+                size: 'large'
+            }"></app-input>
+        </div>
+
+        <div class="actions" fxLayoutGap="15px" fxLayout="row" fxFlex="100">
+            <app-button (click)="backBtnClick()" [type]="'outline'" [data]="{label: 'BACK',iconUrl:''}"></app-button>
+            <app-button (click)="nextBtnClick()" [type]="'primary'" [data]="{label: 'SUBMIT',iconUrl:''}"></app-button>
+        </div>
+    </form>
+</div>
+
+
+

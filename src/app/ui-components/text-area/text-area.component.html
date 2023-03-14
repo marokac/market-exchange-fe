@@ -1,0 +1,8 @@
+<div fxFlex="100" fxLayout="row wrap" [formGroup]="data.parentFormGroup">
+    <label class="text-area-label" >{{data.label}}</label>
+    <textarea fxFlex="100" placeholder="{{data.placeholder}}" [class.text-area-valid]="inputValue && !data.errorMessage"[class.text-area-input-err]="data.errorMessage" fxFlex="100" formControlName = "{{data.controlName}}" (change)="onInputChange($event)" class="text-area" 
+     rows="4" cols="50">
+    </textarea>
+    <span fxFlex="100"class="text-area-err" *ngIf="data.errorMessage">{{data.errorMessage}}</span>
+</div>
+

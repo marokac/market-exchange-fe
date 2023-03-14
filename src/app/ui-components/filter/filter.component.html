@@ -1,14 +1,18 @@
 <div class="filter" fxLayout="column">
   <div class="filter-header">
-    <h5>Filter</h5>
+    <img src="../../../assets/images/sort_FILL0_wght400_GRAD0_opsz48.svg" alt="">
+    <h5>Filter by</h5>
   </div>
   <div [formGroup]="form" class="filter-body" fxLayout="column">
     <ng-container
       [formGroupName]="item.title"
       *ngFor="let item of searchManu; let i = index"
     >
-      <div class="filter-item" (click)="expandItem(i)">
+      <div class="filter-item"  (click)="expandItem(i)">
         {{ item.title }}
+        <span class="filter-item-icon" [class.expanded] ="item.expanded">
+          <img width="24px" src="../../../assets/images/chevron_right.svg">
+        </span>
       </div>
       <div class="filter-sub-menu" fxLayout="column" *ngIf="item.expanded">
         <div class="filter-sub-menu-item" *ngFor="let subItem of item?.subMenu">
@@ -16,10 +20,10 @@
             {{ subItem.title }}
             <input
               type="checkbox"
-              checked="form.get(item.title).controls[subItem.title].value"
-              value="subItem.title"
+              [checked]="form.get(item.title)?.get(subItem.title)?.value"
+              [value]="form.get(item.title)?.get(subItem.title)?.value"
               [formControlName]="subItem.title"
-              (click)="onCheckBoxClick($event, i) ; setFormValue(item.title,subItem.title)"
+              (change)="onCheckBoxClick($event, item.title,subItem.title)"
             />
             <span class="checkmark"></span>
           </label>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import {
   AbstractControl,
   FormArray,
@@ -13,24 +13,13 @@ import {
   styleUrls: ['./filter.component.scss'],
 })
 export class FilterComponent implements OnInit {
-  searchManu = [
-    {
-      title: 'capet',
-      expanded: false,
-      subMenu: [
-        { title: 'chair' },
-        { title: 'play station' },
-        { title: 'radio' },
-        { title: 'milk' },
-      ],
-    },
-    { title: 'sound', expanded: false, subMenu: [{ title: 'JBL' }] },
-    { title: 'TV', expanded: false, subMenu: [{ title: 'Sumsung' }] },
-  ];
+
+  @Output() inputChange: EventEmitter<any> = new EventEmitter();
+  @Input() searchManu: any[] = [];
 
   form = new FormGroup({});
   // cities: new FormGroup({}),
-  constructor() {}
+  constructor(private cdr: ChangeDetectorRef) { }
 
   ngOnInit(): void {
     this.buildForm();
@@ -42,14 +31,16 @@ export class FilterComponent implements OnInit {
     return this.searchManu[index].expanded;
   }
 
-  onCheckBoxClick(event: any, index: number) {
+  onCheckBoxClick(event: any, groupName: string, controlNmame: string) {
+    const value = event.target.checked;
+    this.setFormValue(groupName, controlNmame, value);
     event.stopPropagation();
   }
 
   buildForm(): void {
     this.searchManu.forEach((data) => {
       this.form.controls[data.title] = new FormGroup({});
-      data.subMenu.forEach((item) => {
+      data.subMenu.forEach((item:any) => {
         (this.form.controls[data.title] as FormGroup).addControl(
           item.title,
           new FormControl(false)
@@ -58,10 +49,27 @@ export class FilterComponent implements OnInit {
     });
   }
 
-  setFormValue(groupName: string, controlNmame: string): void {
-    const value = !this.form.get(groupName)?.get(controlNmame)?.value;
-    this.form.get(groupName)?.get(controlNmame)?.setValue(value);
+  setFormValue(groupName: string, controlNmame: string, value: any): void {
+    this.form.patchValue(this.form.get(groupName)?.value);
+    const formValues = []
+    for (let key in this.form.value) {
+      const selected = []
+      for (let k in this.form.value[key]) {
+     
+        if (this.form.value[key][k]) {
+          selected.push(k);
+        }
+     
+      }
+      if(selected.length){
+        formValues.push({ category: key, value: selected.join() })
+      }
+    }
+    this.inputChange.emit(formValues);
+    console.log( formValues);
 
-    console.log(this.form.value);
+    this.cdr.detectChanges();
+
   }
+
 }

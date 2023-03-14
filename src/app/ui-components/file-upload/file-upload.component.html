@@ -1,0 +1,9 @@
+<div fxFlex="100" fxLayout="row wrap"   [formGroup]="data.parentFormGroup">
+    <label fxFlex="100" class="c-input-label">{{data.label}}</label>
+    <div class="c-input" [class.c-input-uploaded]="fileName">
+        <label class="c-input-sub-label">Browse</label>
+        <img class="c-input-img"  src="../../../assets/images/upload.svg">
+        <input (change)="onInputChange($event)" formControlName="{{data.controlName}}" type="file"/>
+    </div>
+    <span fxFlex="100"class="c-input-err" *ngIf="data.errorMessage">{{data.errorMessage}}</span>
+</div>

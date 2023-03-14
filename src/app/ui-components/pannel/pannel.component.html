@@ -1,0 +1,9 @@
+<div class="panel" fxFlex="100" fxLayout="column" >
+  <div class="panel-header">
+    <h1 class="panel-header-text">{{headerText}}</h1>
+   <img (click)="close()" class="panel-header-icon" src="../../../assets/images/close-black.svg">
+  </div>
+  <div class="panel-body" fxLayout="column" fxFlex="100">
+   <ng-content></ng-content>
+  </div>
+</div>

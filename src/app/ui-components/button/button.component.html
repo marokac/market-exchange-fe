@@ -1,0 +1,9 @@
+<button class="btn" [class.btn-primary]="type === 'primary'" 
+[class.btn-secondary]="type === 'secondary'"
+[class.btn-google]="type ==='google'"
+[class.btn-out-line]="type === 'outline'">
+    <span class="btn-icon">
+        <img [src]="data.iconUrl">
+    </span>
+    {{data.label}}
+</button>
